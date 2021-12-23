@@ -10,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+      <nav>
+      <% if user_signed_in? %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'サインアップ', new_user_registration_path %>
+        <%= link_to 'ログイン', new_user_session_path %>
+      <% end %>
+      <% if user_signed_in? %>
+      旅人 : <%= current_user.username %>
+      <% end %>
+    </nav>
+    <!-- ▼ 追加 -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <!-- ▲ 追加 -->
+      <div class="container">
+        <%= yield %>
+      </div>
   </body>
 </html>
