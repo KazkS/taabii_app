@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    # model毎に定義したいattributesを記述
+    attributes:
+      task:
+        title: タイトル
+        description: "詳細"
+  # 全てのmodelで共通して使用するattributesを定義
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
